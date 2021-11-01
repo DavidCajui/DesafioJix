@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>Horas Extracurriculares</title>
+     <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="style/styleCss.css"/>-->
+   
+</head>
+<body>
+	<form method ="" id="upload_form" >           
+    <input  type="button"  value="th:text="${document.linkfixo}"" class="btn btn-info" Download />
+
+    <br><br>
+	</form>
+	
+	<!-- //<br><h4><a href="/{id}" class="btn btn-primary">Download</a></h4> -->
+	    <span scope="row" th:text="${document.linkfixo}"/> 
+        <span scope="row" th:text="${document}"/> 
+		 <span scope="row" th:text="${document.linkfixo}"/>
+		
+
+
+		 <script type="text/javascript">
+    //<![CDATA[
+    function start() {
+        PF('statusDialog').show();
+    }
+
+    function stop() {
+        PF('statusDialog').hide();
+    }
+    //]]>
+</script>
+
+<div class="card">
+    <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false"
+              resizable="false">
+              <i class="pi pi-spinner pi-spin" style="font-size:3rem"></i>
+    </p:dialog>
+
+    <h:form>
+        <p:commandButton value="Download" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);"
+                         icon="pi pi-arrow-down" styleClass="p-mr-2">
+            <p:fileDownload value="#{fileDownloadView.file}"/>
+        </p:commandButton>
+
+        <p:commandButton value="Ajax Download" icon="pi pi-arrow-down" styleClass="ui-button-outlined">
+            <p:fileDownload value="#{fileDownloadView.file}"/>
+        </p:commandButton>
+    </h:form>
+</div>
+
+
+</body>
+
+</script>
+</html>

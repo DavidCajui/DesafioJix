@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Horas Extracurriculares</title>
+     <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="style/styleCss.css"/>-->
+   
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+ <div>
+  <a class="btn btn-primary" href="index" ><h2>Home</h2></a>
+    <!-- <a class="btn btn-primary" href="contatos" ><h2>Contatos</h2></a>
+      <a class="btn btn-primary" href="sobre" ><h2>Sobre</h2></a> -->
+ </div>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+  </form>
+</nav>
+
+
+    <h1>Cadastro de Horas Extracurriculares</h1><hr>
+<div class="container">
+    <form action="/cadastrarDoc" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationTooltip01">Nome</label>
+      <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome do Arquivo" name="name" required>
+      <div class="valid-tooltip">
+        Tudo certo!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationTooltip02">Atividades</label>
+      <input type="text" class="form-control" id="validationTooltip01" placeholder="Resenha das atividades realizadas" name="activity" required>
+      <div class="valid-tooltip">
+        Tudo certo!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationTooltipUsername">Quantidade de Horas </label>
+        <input type="text" class="form-control" id="validationTooltip01" placeholder="" aria-describedby="validationTooltipUsernamePrepend" name="numberHours" required>
+        <div class="invalid-tooltip">
+         
+      </div>
+    </div>
+  </div>
+   <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationTooltip03">Upload</label>
+      <input type="file" class="form-control" id="validationTooltip01" placeholder="" name="file" required>
+      <div class="invalid-tooltip">
+       
+      </div>
+    </div> 
+   
+  </div> 
+  <button class="btn btn-primary" type="submit">Enviar</button>
+</form>
+</div>
+   
+
+   
+</body>
+</html>
